@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
-import ProfilePic from "./ProfilePic";
-import HeaderSection from "./HeaderSection";
+import ProfilePic from "../../../components/ProfilePic";
+import { HeaderSection } from "../../../components/Header";
 
 function UserHeader() {
   return (

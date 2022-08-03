@@ -1,8 +1,8 @@
-import Navigation from "../components/Navigation";
-import UserHeader from "../components/UserHeader";
+import Navigation from "../../components/Navigation";
+import UserHeader from "./components/UserHeader";
 import styled from "@emotion/styled";
-import PostingBox from "../components/PostingBox";
-import HeaderBaseline from "../components/HeaderBaseline";
+import PostingBox from "../../components/PostingBox";
+import { HeaderBaseline } from "../../components/Header";
 
 function UserPage() {
   return (

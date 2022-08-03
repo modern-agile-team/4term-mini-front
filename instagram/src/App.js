@@ -1,21 +1,17 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { injectGlobal } from "@emotion/css";
-import LoginPage from "./pages/LoginPage";
-import SignUp from "./pages/SignUp";
-import MainPage from "./pages/MainPage";
-import Explore from "./components/Explore";
-import UserPage from "./pages/UserPage";
+import { Login, Main, SignUp, User, Explore } from "./pages";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LoginPage />}></Route>
+        <Route path="/" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/explore" element={<Explore />}></Route>
-        <Route path="/main" element={<MainPage />}></Route>
-        <Route path="/username" element={<UserPage />}></Route>
+        <Route path="/main" element={<Main />}></Route>
+        <Route path="/username" element={<User />}></Route>
       </Routes>
     </Router>
   );

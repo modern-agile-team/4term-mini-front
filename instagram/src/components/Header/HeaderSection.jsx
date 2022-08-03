@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-import PostsFollows from "./PostsFollows";
-import IdEditGear from "./IdEditGear";
+import PostsFollows from "../PostsFollows";
+import IdEditGear from "../IdEditGear";
 
 function HeaderSection() {
   return (
