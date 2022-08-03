@@ -1,5 +1,5 @@
-import { Body, Container, ImageBox, Image } from "../styles/Explore_style";
-import Navigation from "./Navigation";
+import Navigation from "../../components/Navigation";
+import { Body, Container, Image, ImageBox } from "./style";
 
 function Explore() {
   return (

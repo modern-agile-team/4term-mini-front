@@ -1,5 +1,5 @@
 import React from "react";
-import CommentMenu from "./CommentMenu";
+import CommentMenu from "../../../components/CommentMenu";
 import {
   Container,
   Card,
@@ -13,7 +13,7 @@ import {
   CommentsPost,
   CommentsAllView,
   CommentsText,
-} from "../styles/MainBoard_Style";
+} from "../style/MainBoardStyle";
 
 function MainBoard() {
   return (

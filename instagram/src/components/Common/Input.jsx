@@ -1,4 +1,4 @@
-import { InputBox, InputText } from "../styles/input_style";
+import { InputBox, InputText } from "../../styles/InputStyle";
 import React from "react";
 
 function Input() {

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { ReactComponent as Posticon } from "../assets/posticon.svg";
+import { ReactComponent as Posticon } from "../../assets/posticon.svg";
 
 function HeaderBaseline() {
   return (
