@@ -19,7 +19,14 @@ function ProfileEditPage() {
             </UserIdEditPic>
           </PictureId>
           <DetailsForm>
-            <DetailItem itemName={"이름"} inputHeight={"higher"} />
+            <DetailItem itemName={"이름"} />
+            <DetailItem itemName={"사용자 이름"} />
+            <DetailItem itemName={"웹 사이트"} />
+            <DetailItem itemName={"소개"} />
+            <DetailItem itemName={"이메일"} />
+            <DetailItem itemName={"전화번호"} />
+            <DetailItem itemName={"성별"} />
+            <SubmitBtn>제출</SubmitBtn>
           </DetailsForm>
         </EditContent>
       </MainContainer>
@@ -27,7 +34,7 @@ function ProfileEditPage() {
   );
 }
 
-function DetailItem({ itemName, inputHeight }) {
+function DetailItem({ itemName }) {
   return (
     <ItemBox>
       <ItemName>
@@ -35,9 +42,9 @@ function DetailItem({ itemName, inputHeight }) {
       </ItemName>
       <InputBox>
         <ItemInput
-          type="text"
+          maxLength={itemName === "소개" ? 55 : 25}
           id={itemName}
-          className={inputHeight}
+          className={itemName === "소개" ? "higher" : "default"}
         ></ItemInput>
       </InputBox>
     </ItemBox>
@@ -46,8 +53,9 @@ function DetailItem({ itemName, inputHeight }) {
 
 const Container = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: ${({ theme }) => theme.palette.backgroundGrey};
+  padding-bottom: 80px;
 `;
 
 const MainContainer = styled.div`
@@ -55,14 +63,14 @@ const MainContainer = styled.div`
   border: 1px solid ${({ theme }) => theme.palette.borderGrey};
   border-radius: 3px;
   background-color: ${({ theme }) => theme.palette.backgroundWhite};
-  margin: 60px auto 0;
+  margin: 60px auto 0px;
   width: 935px;
-  height: 825px;
+  height: 600px;
 `;
 
 const EditMenu = styled.ul`
   width: 235px;
-  height: 825px;
+  height: 597px;
   background-color: ${({ theme }) => theme.palette.backgroundWhite};
   border-right: 1px solid ${({ theme }) => theme.palette.borderGrey};
 `;
@@ -79,15 +87,15 @@ const MenuList = styled.li`
 `;
 
 const EditContent = styled.article`
-  width: 700px;
-  height: 825px;
+  width: 698px;
+  height: 597px;
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.palette.backgroundWhite};
 `;
 
 const PictureId = styled.div`
-  width: 700px;
+  width: 698px;
   height: 42px;
   margin: 33px 0 0;
   display: flex;
@@ -114,14 +122,14 @@ const Nickname = styled.h1`
 `;
 
 const PicEditBtn = styled.button`
-  color: #0095f6;
+  color: ${({ theme }) => theme.palette.btn};
   font-size: 14px;
   font-weight: 700;
 `;
 
 const DetailsForm = styled.form`
   width: 700px;
-  height: 750px;
+  height: 597px;
   margin: 16px 0;
 `;
 
@@ -148,10 +156,14 @@ const Item = styled.label`
   justify-content: flex-end;
 `;
 
-const ItemInput = styled.input`
+const ItemInput = styled.textarea`
   width: 100%;
   border: 1px solid ${({ theme }) => theme.palette.borderGrey};
   border-radius: 3px;
+  padding: 5px 10px;
+  line-height: 20px;
+  font-size: 16px;
+
   &:focus {
     border: 2px solid #262626;
   }
@@ -159,7 +171,25 @@ const ItemInput = styled.input`
     height: 32px;
   }
   &.higher {
-    height: 60px;
+    height: 75px;
+    vertical-align: top;
+  }
+`;
+
+const SubmitBtn = styled.div`
+  width: 48px;
+  height: 30px;
+  margin-left: 194px;
+  background-color: ${({ theme }) => theme.palette.btn};
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  &:active {
+    background-color: ${({ theme }) => theme.palette.btnHover};
   }
 `;
 
